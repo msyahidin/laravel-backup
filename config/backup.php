@@ -76,7 +76,7 @@ return [
          * The database dump can be compressed to decrease diskspace usage.
          *
          * Out of the box Laravel-backup supplies
-         * Spatie\DbDumper\Compressors\GzipCompressor::class.
+         * Develoopin\DbDumper\Compressors\GzipCompressor::class.
          *
          * You can also create custom compressor. More info on that here:
          * https://github.com/spatie/db-dumper#using-compression
@@ -113,24 +113,24 @@ return [
      * For Slack you need to install guzzlehttp/guzzle and laravel/slack-notification-channel.
      *
      * You can also use your own notification classes, just make sure the class is named after one of
-     * the `Spatie\Backup\Events` classes.
+     * the `Develoopin\Backup\Events` classes.
      */
     'notifications' => [
 
         'notifications' => [
-            \Spatie\Backup\Notifications\Notifications\BackupHasFailed::class => ['mail'],
-            \Spatie\Backup\Notifications\Notifications\UnhealthyBackupWasFound::class => ['mail'],
-            \Spatie\Backup\Notifications\Notifications\CleanupHasFailed::class => ['mail'],
-            \Spatie\Backup\Notifications\Notifications\BackupWasSuccessful::class => ['mail'],
-            \Spatie\Backup\Notifications\Notifications\HealthyBackupWasFound::class => ['mail'],
-            \Spatie\Backup\Notifications\Notifications\CleanupWasSuccessful::class => ['mail'],
+            \Develoopin\Backup\Notifications\Notifications\BackupHasFailed::class => ['mail'],
+            \Develoopin\Backup\Notifications\Notifications\UnhealthyBackupWasFound::class => ['mail'],
+            \Develoopin\Backup\Notifications\Notifications\CleanupHasFailed::class => ['mail'],
+            \Develoopin\Backup\Notifications\Notifications\BackupWasSuccessful::class => ['mail'],
+            \Develoopin\Backup\Notifications\Notifications\HealthyBackupWasFound::class => ['mail'],
+            \Develoopin\Backup\Notifications\Notifications\CleanupWasSuccessful::class => ['mail'],
         ],
 
         /*
          * Here you can specify the notifiable to which the notifications should be sent. The default
          * notifiable will use the variables specified in this config file.
          */
-        'notifiable' => \Spatie\Backup\Notifications\Notifiable::class,
+        'notifiable' => \Develoopin\Backup\Notifications\Notifiable::class,
 
         'mail' => [
             'to' => 'your@example.com',
@@ -161,8 +161,8 @@ return [
             'name' => env('APP_NAME', 'laravel-backup'),
             'disks' => ['local'],
             'health_checks' => [
-                \Spatie\Backup\Tasks\Monitor\HealthChecks\MaximumAgeInDays::class => 1,
-                \Spatie\Backup\Tasks\Monitor\HealthChecks\MaximumStorageInMegabytes::class => 5000,
+                \Develoopin\Backup\Tasks\Monitor\HealthChecks\MaximumAgeInDays::class => 1,
+                \Develoopin\Backup\Tasks\Monitor\HealthChecks\MaximumStorageInMegabytes::class => 5000,
             ],
         ],
 
@@ -171,8 +171,8 @@ return [
             'name' => 'name of the second app',
             'disks' => ['local', 's3'],
             'health_checks' => [
-                \Spatie\Backup\Tasks\Monitor\HealthChecks\MaximumAgeInDays::class => 1,
-                \Spatie\Backup\Tasks\Monitor\HealthChecks\MaximumStorageInMegabytes::class => 5000,
+                \Develoopin\Backup\Tasks\Monitor\HealthChecks\MaximumAgeInDays::class => 1,
+                \Develoopin\Backup\Tasks\Monitor\HealthChecks\MaximumStorageInMegabytes::class => 5000,
             ],
         ],
         */
@@ -188,7 +188,7 @@ return [
          * No matter how you configure it the default strategy will never
          * delete the newest backup.
          */
-        'strategy' => \Spatie\Backup\Tasks\Cleanup\Strategies\DefaultStrategy::class,
+        'strategy' => \Develoopin\Backup\Tasks\Cleanup\Strategies\DefaultStrategy::class,
 
         'default_strategy' => [
 
