@@ -13,7 +13,7 @@ use Develoopin\Backup\Events\BackupWasSuccessful;
 use Develoopin\Backup\Events\BackupZipWasCreated;
 use Develoopin\Backup\Exceptions\InvalidBackupJob;
 use Spatie\DbDumper\Compressors\GzipCompressor;
-use Develoopin\TemporaryDirectory\TemporaryDirectory;
+use Spatie\TemporaryDirectory\TemporaryDirectory;
 use Develoopin\Backup\Events\BackupManifestWasCreated;
 use Develoopin\Backup\BackupDestination\BackupDestination;
 
@@ -31,7 +31,7 @@ class BackupJob
     /** @var string */
     protected $filename;
 
-    /** @var \Develoopin\TemporaryDirectory\TemporaryDirectory */
+    /** @var \Spatie\TemporaryDirectory\TemporaryDirectory */
     protected $temporaryDirectory;
 
     /** @var bool */
