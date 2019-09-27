@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Backup\Helpers;
+namespace Develoopin\Backup\Helpers;
 
 class ConsoleOutput
 {

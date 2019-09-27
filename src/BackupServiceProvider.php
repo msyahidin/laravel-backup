@@ -1,15 +1,15 @@
 <?php
 
-namespace Spatie\Backup;
+namespace Develoopin\Backup;
 
 use Illuminate\Support\ServiceProvider;
-use Spatie\Backup\Commands\ListCommand;
-use Spatie\Backup\Helpers\ConsoleOutput;
-use Spatie\Backup\Commands\BackupCommand;
-use Spatie\Backup\Commands\CleanupCommand;
-use Spatie\Backup\Commands\MonitorCommand;
-use Spatie\Backup\Notifications\EventHandler;
-use Spatie\Backup\Tasks\Cleanup\CleanupStrategy;
+use Develoopin\Backup\Commands\ListCommand;
+use Develoopin\Backup\Helpers\ConsoleOutput;
+use Develoopin\Backup\Commands\BackupCommand;
+use Develoopin\Backup\Commands\CleanupCommand;
+use Develoopin\Backup\Commands\MonitorCommand;
+use Develoopin\Backup\Notifications\EventHandler;
+use Develoopin\Backup\Tasks\Cleanup\CleanupStrategy;
 
 class BackupServiceProvider extends ServiceProvider
 {

@@ -1,15 +1,15 @@
 <?php
 
-namespace Spatie\Backup\Tasks\Monitor;
+namespace Develoopin\Backup\Tasks\Monitor;
 
 use Exception;
 use Illuminate\Support\Collection;
-use Spatie\Backup\BackupDestination\BackupDestination;
-use Spatie\Backup\Tasks\Monitor\HealthChecks\IsReachable;
+use Develoopin\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\Tasks\Monitor\HealthChecks\IsReachable;
 
 class BackupDestinationStatus
 {
-    /** @var \Spatie\Backup\BackupDestination\BackupDestination */
+    /** @var \Develoopin\Backup\BackupDestination\BackupDestination */
     protected $backupDestination;
 
     /** @var array */

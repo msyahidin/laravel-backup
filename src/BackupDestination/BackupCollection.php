@@ -1,8 +1,8 @@
 <?php
 
-namespace Spatie\Backup\BackupDestination;
+namespace Develoopin\Backup\BackupDestination;
 
-use Spatie\Backup\Helpers\File;
+use Develoopin\Backup\Helpers\File;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Filesystem\Filesystem;
 

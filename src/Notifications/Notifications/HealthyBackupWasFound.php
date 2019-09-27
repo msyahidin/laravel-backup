@@ -1,16 +1,16 @@
 <?php
 
-namespace Spatie\Backup\Notifications\Notifications;
+namespace Develoopin\Backup\Notifications\Notifications;
 
-use Spatie\Backup\Notifications\BaseNotification;
+use Develoopin\Backup\Notifications\BaseNotification;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Messages\SlackAttachment;
-use Spatie\Backup\Events\HealthyBackupWasFound as HealthyBackupWasFoundEvent;
+use Develoopin\Backup\Events\HealthyBackupWasFound as HealthyBackupWasFoundEvent;
 
 class HealthyBackupWasFound extends BaseNotification
 {
-    /** @var \Spatie\Backup\Events\HealthyBackupWasFound */
+    /** @var \Develoopin\Backup\Events\HealthyBackupWasFound */
     protected $event;
 
     public function toMail(): MailMessage

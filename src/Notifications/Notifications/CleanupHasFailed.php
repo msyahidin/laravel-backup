@@ -1,16 +1,16 @@
 <?php
 
-namespace Spatie\Backup\Notifications\Notifications;
+namespace Develoopin\Backup\Notifications\Notifications;
 
-use Spatie\Backup\Notifications\BaseNotification;
+use Develoopin\Backup\Notifications\BaseNotification;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Messages\SlackAttachment;
-use Spatie\Backup\Events\CleanupHasFailed as CleanupHasFailedEvent;
+use Develoopin\Backup\Events\CleanupHasFailed as CleanupHasFailedEvent;
 
 class CleanupHasFailed extends BaseNotification
 {
-    /** @var \Spatie\Backup\Events\CleanupHasFailed */
+    /** @var \Develoopin\Backup\Events\CleanupHasFailed */
     protected $event;
 
     public function toMail(): MailMessage

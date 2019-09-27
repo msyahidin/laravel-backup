@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Backup\Tasks\Backup;
+namespace Develoopin\Backup\Tasks\Backup;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
@@ -20,7 +20,7 @@ class FileSelection
     /**
      * @param array|string $includeFilesAndDirectories
      *
-     * @return \Spatie\Backup\Tasks\Backup\FileSelection
+     * @return \Develoopin\Backup\Tasks\Backup\FileSelection
      */
     public static function create($includeFilesAndDirectories = []): self
     {
@@ -42,7 +42,7 @@ class FileSelection
      *
      * @param array|string $excludeFilesAndDirectories
      *
-     * @return \Spatie\Backup\Tasks\Backup\FileSelection
+     * @return \Develoopin\Backup\Tasks\Backup\FileSelection
      */
     public function excludeFilesFrom($excludeFilesAndDirectories): self
     {

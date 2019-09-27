@@ -1,20 +1,20 @@
 <?php
 
-namespace Spatie\Backup\Tasks\Cleanup;
+namespace Develoopin\Backup\Tasks\Cleanup;
 
 use Exception;
-use Spatie\Backup\Helpers\Format;
+use Develoopin\Backup\Helpers\Format;
 use Illuminate\Support\Collection;
-use Spatie\Backup\Events\CleanupHasFailed;
-use Spatie\Backup\Events\CleanupWasSuccessful;
-use Spatie\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\Events\CleanupHasFailed;
+use Develoopin\Backup\Events\CleanupWasSuccessful;
+use Develoopin\Backup\BackupDestination\BackupDestination;
 
 class CleanupJob
 {
     /** @var \Illuminate\Support\Collection */
     protected $backupDestinations;
 
-    /** @var \Spatie\Backup\Tasks\Cleanup\CleanupStrategy */
+    /** @var \Develoopin\Backup\Tasks\Cleanup\CleanupStrategy */
     protected $strategy;
 
     /** @var bool */

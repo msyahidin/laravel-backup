@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Backup\Helpers;
+namespace Develoopin\Backup\Helpers;
 
 use Exception;
 use Illuminate\Contracts\Filesystem\Filesystem;

@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Backup\Events;
+namespace Develoopin\Backup\Events;
 
-use Spatie\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\BackupDestination\BackupDestination;
 
 class BackupWasSuccessful
 {
-    /** @var \Spatie\Backup\BackupDestination\BackupDestination */
+    /** @var \Develoopin\Backup\BackupDestination\BackupDestination */
     public $backupDestination;
 
     public function __construct(BackupDestination $backupDestination)

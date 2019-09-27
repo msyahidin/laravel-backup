@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Backup\Events;
+namespace Develoopin\Backup\Events;
 
-use Spatie\Backup\Tasks\Monitor\BackupDestinationStatus;
+use Develoopin\Backup\Tasks\Monitor\BackupDestinationStatus;
 
 class HealthyBackupWasFound
 {
-    /** @var \Spatie\Backup\Tasks\Monitor\BackupDestinationStatus */
+    /** @var \Develoopin\Backup\Tasks\Monitor\BackupDestinationStatus */
     public $backupDestinationStatus;
 
     public function __construct(BackupDestinationStatus $backupDestinationStatus)

@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\Backup\Tasks\Monitor;
+namespace Develoopin\Backup\Tasks\Monitor;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Spatie\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\BackupDestination\BackupDestination;
 
 class BackupDestinationStatusFactory
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Backup\Events;
+namespace Develoopin\Backup\Events;
 
-use Spatie\Backup\Tasks\Backup\Manifest;
+use Develoopin\Backup\Tasks\Backup\Manifest;
 
 class BackupManifestWasCreated
 {
-    /** @var \Spatie\Backup\Tasks\Backup\Manifest */
+    /** @var \Develoopin\Backup\Tasks\Backup\Manifest */
     public $manifest;
 
     public function __construct(Manifest $manifest)

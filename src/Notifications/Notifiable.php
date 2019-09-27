@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Backup\Notifications;
+namespace Develoopin\Backup\Notifications;
 
 use Illuminate\Notifications\Notifiable as NotifiableTrait;
 

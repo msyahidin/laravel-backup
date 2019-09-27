@@ -1,16 +1,16 @@
 <?php
 
-namespace Spatie\Backup\Notifications\Notifications;
+namespace Develoopin\Backup\Notifications\Notifications;
 
-use Spatie\Backup\Notifications\BaseNotification;
+use Develoopin\Backup\Notifications\BaseNotification;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Messages\SlackAttachment;
-use Spatie\Backup\Events\BackupHasFailed as BackupHasFailedEvent;
+use Develoopin\Backup\Events\BackupHasFailed as BackupHasFailedEvent;
 
 class BackupHasFailed extends BaseNotification
 {
-    /** @var \Spatie\Backup\Events\BackupHasFailed */
+    /** @var \Develoopin\Backup\Events\BackupHasFailed */
     protected $event;
 
     public function toMail(): MailMessage

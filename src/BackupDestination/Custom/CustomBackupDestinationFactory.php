@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\Backup\BackupDestination\Custom;
+namespace Develoopin\Backup\BackupDestination\Custom;
 
 use Illuminate\Support\Collection;
-use Spatie\Backup\BackupDestination\BackupDestinationFactory;
+use Develoopin\Backup\BackupDestination\BackupDestinationFactory;
 
 class CustomBackupDestinationFactory extends BackupDestinationFactory
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\Backup\Tasks\Backup;
+namespace Develoopin\Backup\Tasks\Backup;
 
 use Illuminate\Support\Collection;
-use Spatie\Backup\BackupDestination\BackupDestinationFactory;
-use Spatie\Backup\BackupDestination\Custom\CustomBackupDestinationFactory;
+use Develoopin\Backup\BackupDestination\BackupDestinationFactory;
+use Develoopin\Backup\BackupDestination\Custom\CustomBackupDestinationFactory;
 
 class BackupJobFactory
 {

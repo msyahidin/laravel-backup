@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Backup\Events;
+namespace Develoopin\Backup\Events;
 
 class BackupZipWasCreated
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Spatie\Backup\Notifications;
+namespace Develoopin\Backup\Notifications;
 
-use Spatie\Backup\Helpers\Format;
+use Develoopin\Backup\Helpers\Format;
 use Illuminate\Support\Collection;
 use Illuminate\Notifications\Notification;
-use Spatie\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\BackupDestination\BackupDestination;
 
 abstract class BaseNotification extends Notification
 {

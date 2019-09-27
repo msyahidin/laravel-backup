@@ -1,5 +1,5 @@
 {
-    "name": "spatie/laravel-backup",
+    "name": "develoopin/laravel-backup",
     "description": "A Laravel package to backup your application",
     "keywords": [
         "spatie",
@@ -7,7 +7,7 @@
         "database",
         "laravel-backup"
     ],
-    "homepage": "https://github.com/spatie/laravel-backup",
+    "homepage": "https://github.com/develoopin/laravel-backup",
     "license": "MIT",
     "authors": [
         {
@@ -39,7 +39,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Backup\\": "src"
+            "Develoopin\\Backup\\": "src"
         },
         "files": [
             "src/Helpers/functions.php"
@@ -47,7 +47,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Backup\\Tests\\": "tests"
+            "Develoopin\\Backup\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -62,7 +62,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Backup\\BackupServiceProvider"
+                "Develoopin\\Backup\\BackupServiceProvider"
             ]
         }
     }

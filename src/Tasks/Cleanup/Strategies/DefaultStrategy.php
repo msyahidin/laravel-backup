@@ -1,17 +1,17 @@
 <?php
 
-namespace Spatie\Backup\Tasks\Cleanup\Strategies;
+namespace Develoopin\Backup\Tasks\Cleanup\Strategies;
 
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
-use Spatie\Backup\Tasks\Cleanup\Period;
-use Spatie\Backup\BackupDestination\Backup;
-use Spatie\Backup\Tasks\Cleanup\CleanupStrategy;
-use Spatie\Backup\BackupDestination\BackupCollection;
+use Develoopin\Backup\Tasks\Cleanup\Period;
+use Develoopin\Backup\BackupDestination\Backup;
+use Develoopin\Backup\Tasks\Cleanup\CleanupStrategy;
+use Develoopin\Backup\BackupDestination\BackupCollection;
 
 class DefaultStrategy extends CleanupStrategy
 {
-    /** @var \Spatie\Backup\BackupDestination\Backup */
+    /** @var \Develoopin\Backup\BackupDestination\Backup */
     protected $newestBackup;
 
     public function deleteOldBackups(BackupCollection $backups)

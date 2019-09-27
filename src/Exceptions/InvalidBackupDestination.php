@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Backup\Exceptions;
+namespace Develoopin\Backup\Exceptions;
 
 use Exception;
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Backup\Commands;
+namespace Develoopin\Backup\Commands;
 
-use Spatie\Backup\Helpers\Format;
+use Develoopin\Backup\Helpers\Format;
 use Illuminate\Support\Collection;
-use Spatie\Backup\BackupDestination\Backup;
-use Spatie\Backup\Tasks\Monitor\BackupDestinationStatus;
-use Spatie\Backup\Tasks\Monitor\BackupDestinationStatusFactory;
+use Develoopin\Backup\BackupDestination\Backup;
+use Develoopin\Backup\Tasks\Monitor\BackupDestinationStatus;
+use Develoopin\Backup\Tasks\Monitor\BackupDestinationStatusFactory;
 
 class ListCommand extends BaseCommand
 {

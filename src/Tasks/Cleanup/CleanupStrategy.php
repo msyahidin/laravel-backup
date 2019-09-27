@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\Backup\Tasks\Cleanup;
+namespace Develoopin\Backup\Tasks\Cleanup;
 
 use Illuminate\Contracts\Config\Repository;
-use Spatie\Backup\BackupDestination\BackupCollection;
+use Develoopin\Backup\BackupDestination\BackupCollection;
 
 abstract class CleanupStrategy
 {

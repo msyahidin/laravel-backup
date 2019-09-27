@@ -1,25 +1,25 @@
 <?php
 
-namespace Spatie\Backup\Tasks\Backup;
+namespace Develoopin\Backup\Tasks\Backup;
 
 use Exception;
 use Carbon\Carbon;
-use Spatie\DbDumper\DbDumper;
+use Develoopin\DbDumper\DbDumper;
 use Illuminate\Support\Collection;
-use Spatie\DbDumper\Databases\Sqlite;
-use Spatie\DbDumper\Databases\MongoDb;
-use Spatie\Backup\Events\BackupHasFailed;
-use Spatie\Backup\Events\BackupWasSuccessful;
-use Spatie\Backup\Events\BackupZipWasCreated;
-use Spatie\Backup\Exceptions\InvalidBackupJob;
-use Spatie\DbDumper\Compressors\GzipCompressor;
-use Spatie\TemporaryDirectory\TemporaryDirectory;
-use Spatie\Backup\Events\BackupManifestWasCreated;
-use Spatie\Backup\BackupDestination\BackupDestination;
+use Develoopin\DbDumper\Databases\Sqlite;
+use Develoopin\DbDumper\Databases\MongoDb;
+use Develoopin\Backup\Events\BackupHasFailed;
+use Develoopin\Backup\Events\BackupWasSuccessful;
+use Develoopin\Backup\Events\BackupZipWasCreated;
+use Develoopin\Backup\Exceptions\InvalidBackupJob;
+use Develoopin\DbDumper\Compressors\GzipCompressor;
+use Develoopin\TemporaryDirectory\TemporaryDirectory;
+use Develoopin\Backup\Events\BackupManifestWasCreated;
+use Develoopin\Backup\BackupDestination\BackupDestination;
 
 class BackupJob
 {
-    /** @var \Spatie\Backup\Tasks\Backup\FileSelection */
+    /** @var \Develoopin\Backup\Tasks\Backup\FileSelection */
     protected $fileSelection;
 
     /** @var \Illuminate\Support\Collection */
@@ -31,7 +31,7 @@ class BackupJob
     /** @var string */
     protected $filename;
 
-    /** @var \Spatie\TemporaryDirectory\TemporaryDirectory */
+    /** @var \Develoopin\TemporaryDirectory\TemporaryDirectory */
     protected $temporaryDirectory;
 
     /** @var bool */

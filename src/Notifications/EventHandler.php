@@ -1,17 +1,17 @@
 <?php
 
-namespace Spatie\Backup\Notifications;
+namespace Develoopin\Backup\Notifications;
 
-use Spatie\Backup\Events\BackupHasFailed;
+use Develoopin\Backup\Events\BackupHasFailed;
 use Illuminate\Notifications\Notification;
-use Spatie\Backup\Events\CleanupHasFailed;
+use Develoopin\Backup\Events\CleanupHasFailed;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
-use Spatie\Backup\Events\BackupWasSuccessful;
-use Spatie\Backup\Events\CleanupWasSuccessful;
-use Spatie\Backup\Events\HealthyBackupWasFound;
-use Spatie\Backup\Events\UnhealthyBackupWasFound;
-use Spatie\Backup\Exceptions\NotificationCouldNotBeSent;
+use Develoopin\Backup\Events\BackupWasSuccessful;
+use Develoopin\Backup\Events\CleanupWasSuccessful;
+use Develoopin\Backup\Events\HealthyBackupWasFound;
+use Develoopin\Backup\Events\UnhealthyBackupWasFound;
+use Develoopin\Backup\Exceptions\NotificationCouldNotBeSent;
 
 class EventHandler
 {

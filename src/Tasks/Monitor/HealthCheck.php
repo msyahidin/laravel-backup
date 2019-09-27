@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\Backup\Tasks\Monitor;
+namespace Develoopin\Backup\Tasks\Monitor;
 
 use Illuminate\Support\Str;
-use Spatie\Backup\Exceptions\InvalidHealthCheck;
-use Spatie\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\Exceptions\InvalidHealthCheck;
+use Develoopin\Backup\BackupDestination\BackupDestination;
 
 abstract class HealthCheck
 {

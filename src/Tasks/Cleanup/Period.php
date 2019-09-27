@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Backup\Tasks\Cleanup;
+namespace Develoopin\Backup\Tasks\Cleanup;
 
 use Carbon\Carbon;
 

@@ -1,16 +1,16 @@
 <?php
 
-namespace Spatie\Backup\Events;
+namespace Develoopin\Backup\Events;
 
 use Exception;
-use Spatie\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\BackupDestination\BackupDestination;
 
 class CleanupHasFailed
 {
     /** @var \Exception */
     public $exception;
 
-    /** @var \Spatie\Backup\BackupDestination\BackupDestination|null */
+    /** @var \Develoopin\Backup\BackupDestination\BackupDestination|null */
     public $backupDestination;
 
     public function __construct(Exception $exception, BackupDestination $backupDestination = null)

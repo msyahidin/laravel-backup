@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\Backup\Commands;
+namespace Develoopin\Backup\Commands;
 
 use Illuminate\Console\Command;
-use Spatie\Backup\Helpers\ConsoleOutput;
+use Develoopin\Backup\Helpers\ConsoleOutput;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 

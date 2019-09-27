@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\Backup\Tasks\Backup;
+namespace Develoopin\Backup\Tasks\Backup;
 
 use ZipArchive;
 use Illuminate\Support\Str;
-use Spatie\Backup\Helpers\Format;
+use Develoopin\Backup\Helpers\Format;
 
 class Zip
 {
@@ -87,7 +87,7 @@ class Zip
      * @param string|array $files
      * @param string $nameInZip
      *
-     * @return \Spatie\Backup\Tasks\Backup\Zip
+     * @return \Develoopin\Backup\Tasks\Backup\Zip
      */
     public function add($files, string $nameInZip = null): self
     {

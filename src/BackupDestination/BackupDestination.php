@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Backup\BackupDestination;
+namespace Develoopin\Backup\BackupDestination;
 
 use Exception;
 use Carbon\Carbon;
 use Illuminate\Contracts\Filesystem\Factory;
 use Illuminate\Contracts\Filesystem\Filesystem;
-use Spatie\Backup\Exceptions\InvalidBackupDestination;
+use Develoopin\Backup\Exceptions\InvalidBackupDestination;
 
 class BackupDestination
 {
@@ -22,7 +22,7 @@ class BackupDestination
     /** @var Exception */
     public $connectionError;
 
-    /** @var null|\Spatie\Backup\BackupDestination\BackupCollection */
+    /** @var null|\Develoopin\Backup\BackupDestination\BackupCollection */
     protected $backupCollectionCache = null;
 
     public function __construct(Filesystem $disk = null, string $backupName, string $diskName, $info = null)

@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Backup\Commands;
+namespace Develoopin\Backup\Commands;
 
 use Exception;
-use Spatie\Backup\Events\CleanupHasFailed;
-use Spatie\Backup\Tasks\Cleanup\CleanupJob;
-use Spatie\Backup\Tasks\Cleanup\CleanupStrategy;
-use Spatie\Backup\BackupDestination\BackupDestinationFactory;
+use Develoopin\Backup\Events\CleanupHasFailed;
+use Develoopin\Backup\Tasks\Cleanup\CleanupJob;
+use Develoopin\Backup\Tasks\Cleanup\CleanupStrategy;
+use Develoopin\Backup\BackupDestination\BackupDestinationFactory;
 
 class CleanupCommand extends BaseCommand
 {
@@ -16,7 +16,7 @@ class CleanupCommand extends BaseCommand
     /** @var string */
     protected $description = 'Remove all backups older than specified number of days in config.';
 
-    /** @var \Spatie\Backup\Tasks\Cleanup\CleanupStrategy */
+    /** @var \Develoopin\Backup\Tasks\Cleanup\CleanupStrategy */
     protected $strategy;
 
     public function __construct(CleanupStrategy $strategy)

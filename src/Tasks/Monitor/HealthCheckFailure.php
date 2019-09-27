@@ -1,13 +1,13 @@
 <?php
 
-namespace Spatie\Backup\Tasks\Monitor;
+namespace Develoopin\Backup\Tasks\Monitor;
 
 use Exception;
-use Spatie\Backup\Exceptions\InvalidHealthCheck;
+use Develoopin\Backup\Exceptions\InvalidHealthCheck;
 
 class HealthCheckFailure
 {
-    /** @var \Spatie\Backup\Tasks\Monitor */
+    /** @var \Develoopin\Backup\Tasks\Monitor */
     protected $healthCheck;
 
     /** @var \Exception */

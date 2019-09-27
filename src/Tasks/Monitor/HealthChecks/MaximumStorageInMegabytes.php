@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\Backup\Tasks\Monitor\HealthChecks;
+namespace Develoopin\Backup\Tasks\Monitor\HealthChecks;
 
-use Spatie\Backup\Helpers\Format;
-use Spatie\Backup\Tasks\Monitor\HealthCheck;
-use Spatie\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\Helpers\Format;
+use Develoopin\Backup\Tasks\Monitor\HealthCheck;
+use Develoopin\Backup\BackupDestination\BackupDestination;
 
 class MaximumStorageInMegabytes extends HealthCheck
 {

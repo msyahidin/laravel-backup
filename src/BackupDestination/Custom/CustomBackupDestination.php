@@ -1,13 +1,13 @@
 <?php
 
-namespace Spatie\Backup\BackupDestination\Custom;
+namespace Develoopin\Backup\BackupDestination\Custom;
 
 use Exception;
 use Carbon\Carbon;
 use Illuminate\Contracts\Filesystem\Factory;
 use Illuminate\Contracts\Filesystem\Filesystem;
-use Spatie\Backup\Exceptions\InvalidBackupDestination;
-use Spatie\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\Exceptions\InvalidBackupDestination;
+use Develoopin\Backup\BackupDestination\BackupDestination;
 
 class CustomBackupDestination extends BackupDestination
 {

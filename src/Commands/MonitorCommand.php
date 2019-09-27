@@ -1,11 +1,11 @@
 <?php
 
-namespace Spatie\Backup\Commands;
+namespace Develoopin\Backup\Commands;
 
-use Spatie\Backup\Events\HealthyBackupWasFound;
-use Spatie\Backup\Events\UnhealthyBackupWasFound;
-use Spatie\Backup\Tasks\Monitor\BackupDestinationStatus;
-use Spatie\Backup\Tasks\Monitor\BackupDestinationStatusFactory;
+use Develoopin\Backup\Events\HealthyBackupWasFound;
+use Develoopin\Backup\Events\UnhealthyBackupWasFound;
+use Develoopin\Backup\Tasks\Monitor\BackupDestinationStatus;
+use Develoopin\Backup\Tasks\Monitor\BackupDestinationStatusFactory;
 
 class MonitorCommand extends BaseCommand
 {
