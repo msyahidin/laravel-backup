@@ -4,11 +4,11 @@ namespace Develoopin\Backup\Tasks\Backup;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use Develoopin\DbDumper\DbDumper;
-use Develoopin\DbDumper\Databases\MySql;
-use Develoopin\DbDumper\Databases\Sqlite;
-use Develoopin\DbDumper\Databases\MongoDb;
-use Develoopin\DbDumper\Databases\PostgreSql;
+use Spatie\DbDumper\DbDumper;
+use Spatie\DbDumper\Databases\MySql;
+use Spatie\DbDumper\Databases\Sqlite;
+use Spatie\DbDumper\Databases\MongoDb;
+use Spatie\DbDumper\Databases\PostgreSql;
 use Develoopin\Backup\Exceptions\CannotCreateDbDumper;
 
 class DbDumperFactory
