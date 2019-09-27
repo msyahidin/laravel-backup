@@ -25,7 +25,7 @@ class BackupDestination
     /** @var null|\Spatie\Backup\BackupDestination\BackupCollection */
     protected $backupCollectionCache = null;
 
-    public function __construct(Filesystem $disk = null, string $backupName, string $diskName)
+    public function __construct(Filesystem $disk = null, string $backupName, string $diskName, $info = null)
     {
         $this->disk = $disk;
 
@@ -57,7 +57,7 @@ class BackupDestination
         return strtolower($filesystemType);
     }
 
-    public static function create(string $diskName, string $backupName): self
+    public static function create(string $diskName, string $backupName, $info = null): self
     {
         try {
             $disk = app(Factory::class)->disk($diskName);

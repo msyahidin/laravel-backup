@@ -4,6 +4,7 @@ namespace Spatie\Backup\Tasks\Backup;
 
 use Illuminate\Support\Collection;
 use Spatie\Backup\BackupDestination\BackupDestinationFactory;
+use Spatie\Backup\BackupDestination\Custom\CustomBackupDestinationFactory;
 
 class BackupJobFactory
 {
@@ -12,7 +13,7 @@ class BackupJobFactory
         return (new BackupJob())
             ->setFileSelection(static::createFileSelection($config['backup']['source']['files']))
             ->setDbDumpers(static::createDbDumpers($config['backup']['source']['databases']))
-            ->setBackupDestinations(BackupDestinationFactory::createFromArray($config['backup']));
+            ->setBackupDestinations(CustomBackupDestinationFactory::createFromArray($config['backup']));
     }
 
     protected static function createFileSelection(array $sourceFiles): FileSelection
