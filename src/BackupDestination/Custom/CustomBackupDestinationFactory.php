@@ -2,8 +2,8 @@
 
 namespace Develoopin\Backup\BackupDestination\Custom;
 
-use Illuminate\Support\Collection;
 use Develoopin\Backup\BackupDestination\BackupDestinationFactory;
+use Illuminate\Support\Collection;
 
 class CustomBackupDestinationFactory extends BackupDestinationFactory
 {

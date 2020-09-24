@@ -2,10 +2,10 @@
 
 namespace Develoopin\Backup\Notifications\Notifications;
 
+use Develoopin\Backup\Events\BackupWasSuccessful as BackupWasSuccessfulEvent;
 use Develoopin\Backup\Notifications\BaseNotification;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\SlackAttachment;
-use Develoopin\Backup\Events\BackupWasSuccessful as BackupWasSuccessfulEvent;
 use Illuminate\Notifications\Messages\SlackMessage;
 
 class BackupWasSuccessful extends BaseNotification

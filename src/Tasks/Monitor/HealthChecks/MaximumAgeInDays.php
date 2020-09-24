@@ -3,8 +3,8 @@
 namespace Develoopin\Backup\Tasks\Monitor\HealthChecks;
 
 use Develoopin\Backup\BackupDestination\Backup;
-use Develoopin\Backup\Tasks\Monitor\HealthCheck;
 use Develoopin\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\Tasks\Monitor\HealthCheck;
 
 class MaximumAgeInDays extends HealthCheck
 {

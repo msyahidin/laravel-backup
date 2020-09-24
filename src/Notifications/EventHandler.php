@@ -3,15 +3,15 @@
 namespace Develoopin\Backup\Notifications;
 
 use Develoopin\Backup\Events\BackupHasFailed;
-use Illuminate\Notifications\Notification;
-use Develoopin\Backup\Events\CleanupHasFailed;
-use Illuminate\Contracts\Config\Repository;
-use Illuminate\Contracts\Events\Dispatcher;
 use Develoopin\Backup\Events\BackupWasSuccessful;
+use Develoopin\Backup\Events\CleanupHasFailed;
 use Develoopin\Backup\Events\CleanupWasSuccessful;
 use Develoopin\Backup\Events\HealthyBackupWasFound;
 use Develoopin\Backup\Events\UnhealthyBackupWasFound;
 use Develoopin\Backup\Exceptions\NotificationCouldNotBeSent;
+use Illuminate\Contracts\Config\Repository;
+use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Notifications\Notification;
 
 class EventHandler
 {

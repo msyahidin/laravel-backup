@@ -2,12 +2,12 @@
 
 namespace Develoopin\Backup\Commands;
 
-use Develoopin\Backup\Helpers\Format;
-use Illuminate\Support\Collection;
 use Develoopin\Backup\BackupDestination\Backup;
+use Develoopin\Backup\Helpers\Format;
+use Develoopin\Backup\Helpers\RightAlignedTableStyle;
 use Develoopin\Backup\Tasks\Monitor\BackupDestinationStatus;
 use Develoopin\Backup\Tasks\Monitor\BackupDestinationStatusFactory;
-use Develoopin\Backup\Helpers\RightAlignedTableStyle;
+use Illuminate\Support\Collection;
 
 class ListCommand extends BaseCommand
 {

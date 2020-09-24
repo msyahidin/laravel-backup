@@ -2,10 +2,10 @@
 
 namespace Develoopin\Backup\Notifications\Notifications;
 
+use Develoopin\Backup\Events\CleanupWasSuccessful as CleanupWasSuccessfulEvent;
 use Develoopin\Backup\Notifications\BaseNotification;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\SlackAttachment;
-use Develoopin\Backup\Events\CleanupWasSuccessful as CleanupWasSuccessfulEvent;
 use Illuminate\Notifications\Messages\SlackMessage;
 
 class CleanupWasSuccessful extends BaseNotification

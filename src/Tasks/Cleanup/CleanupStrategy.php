@@ -2,8 +2,8 @@
 
 namespace Develoopin\Backup\Tasks\Cleanup;
 
-use Illuminate\Contracts\Config\Repository;
 use Develoopin\Backup\BackupDestination\BackupCollection;
+use Illuminate\Contracts\Config\Repository;
 
 abstract class CleanupStrategy
 {

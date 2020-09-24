@@ -2,10 +2,9 @@
 
 namespace Develoopin\Backup\Tasks\Backup;
 
+use Develoopin\Backup\BackupDestination\Custom\CustomBackupDestinationFactory;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Develoopin\Backup\BackupDestination\BackupDestinationFactory;
-use Develoopin\Backup\BackupDestination\Custom\CustomBackupDestinationFactory;
 
 class BackupJobFactory
 {

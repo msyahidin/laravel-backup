@@ -2,10 +2,10 @@
 
 namespace Develoopin\Backup\Tasks\Monitor;
 
-use Exception;
-use Illuminate\Support\Collection;
 use Develoopin\Backup\BackupDestination\BackupDestination;
 use Develoopin\Backup\Tasks\Monitor\HealthChecks\IsReachable;
+use Exception;
+use Illuminate\Support\Collection;
 
 class BackupDestinationStatus
 {

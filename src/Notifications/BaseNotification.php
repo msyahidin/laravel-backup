@@ -2,10 +2,10 @@
 
 namespace Develoopin\Backup\Notifications;
 
-use Develoopin\Backup\Helpers\Format;
-use Illuminate\Support\Collection;
-use Illuminate\Notifications\Notification;
 use Develoopin\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\Helpers\Format;
+use Illuminate\Notifications\Notification;
+use Illuminate\Support\Collection;
 
 abstract class BaseNotification extends Notification
 {

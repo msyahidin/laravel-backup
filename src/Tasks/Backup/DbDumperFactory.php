@@ -2,6 +2,7 @@
 
 namespace Develoopin\Backup\Tasks\Backup;
 
+use Develoopin\Backup\Exceptions\CannotCreateDbDumper;
 use Exception;
 use Illuminate\Database\ConfigurationUrlParser;
 use Illuminate\Support\Arr;
@@ -9,7 +10,6 @@ use Illuminate\Support\Str;
 use Spatie\DbDumper\Databases\MongoDb;
 use Spatie\DbDumper\Databases\MySql;
 use Spatie\DbDumper\Databases\PostgreSql;
-use Develoopin\Backup\Exceptions\CannotCreateDbDumper;
 use Spatie\DbDumper\Databases\Sqlite;
 use Spatie\DbDumper\DbDumper;
 

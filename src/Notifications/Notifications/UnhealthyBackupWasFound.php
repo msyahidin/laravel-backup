@@ -2,12 +2,12 @@
 
 namespace Develoopin\Backup\Notifications\Notifications;
 
-use Develoopin\Backup\Notifications\BaseNotification;
-use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Messages\SlackMessage;
-use Develoopin\Backup\Tasks\Monitor\HealthCheckFailure;
-use Illuminate\Notifications\Messages\SlackAttachment;
 use Develoopin\Backup\Events\UnhealthyBackupWasFound as UnhealthyBackupWasFoundEvent;
+use Develoopin\Backup\Notifications\BaseNotification;
+use Develoopin\Backup\Tasks\Monitor\HealthCheckFailure;
+use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Messages\SlackAttachment;
+use Illuminate\Notifications\Messages\SlackMessage;
 
 class UnhealthyBackupWasFound extends BaseNotification
 {

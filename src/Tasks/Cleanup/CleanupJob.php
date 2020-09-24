@@ -2,12 +2,12 @@
 
 namespace Develoopin\Backup\Tasks\Cleanup;
 
-use Exception;
-use Develoopin\Backup\Helpers\Format;
-use Illuminate\Support\Collection;
+use Develoopin\Backup\BackupDestination\BackupDestination;
 use Develoopin\Backup\Events\CleanupHasFailed;
 use Develoopin\Backup\Events\CleanupWasSuccessful;
-use Develoopin\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\Helpers\Format;
+use Exception;
+use Illuminate\Support\Collection;
 
 class CleanupJob
 {

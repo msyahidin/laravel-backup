@@ -3,8 +3,8 @@
 namespace Develoopin\Backup\BackupDestination;
 
 use Develoopin\Backup\Helpers\File;
-use Illuminate\Support\Collection;
 use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Support\Collection;
 
 class BackupCollection extends Collection
 {

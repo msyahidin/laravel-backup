@@ -2,8 +2,8 @@
 
 namespace Develoopin\Backup\Tasks\Monitor;
 
-use Exception;
 use Develoopin\Backup\Exceptions\InvalidHealthCheck;
+use Exception;
 
 class HealthCheckFailure
 {
