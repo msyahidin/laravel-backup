@@ -2,6 +2,7 @@
 
 namespace Develoopin\Backup\Tasks\Backup;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Develoopin\Backup\BackupDestination\BackupDestinationFactory;
 use Develoopin\Backup\BackupDestination\Custom\CustomBackupDestinationFactory;
@@ -20,13 +21,14 @@ class BackupJobFactory
     {
         return FileSelection::create($sourceFiles['include'])
             ->excludeFilesFrom($sourceFiles['exclude'])
-            ->shouldFollowLinks(isset($sourceFiles['follow_links']) && $sourceFiles['follow_links']);
+            ->shouldFollowLinks(isset($sourceFiles['follow_links']) && $sourceFiles['follow_links'])
+            ->shouldIgnoreUnreadableDirs(Arr::get($sourceFiles, 'ignore_unreadable_directories', false));
     }
 
     protected static function createDbDumpers(array $dbConnectionNames): Collection
     {
         return collect($dbConnectionNames)->mapWithKeys(function (string $dbConnectionName) {
-            return [$dbConnectionName=>DbDumperFactory::createFromConnection($dbConnectionName)];
+            return [$dbConnectionName => DbDumperFactory::createFromConnection($dbConnectionName)];
         });
     }
 }

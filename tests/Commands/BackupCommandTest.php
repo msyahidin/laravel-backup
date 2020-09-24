@@ -3,11 +3,11 @@
 namespace Spatie\Backup\Tests\Commands;
 
 use Carbon\Carbon;
-use Spatie\Backup\Tests\TestCase;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Backup\Events\BackupHasFailed;
+use Spatie\Backup\Tests\TestCase;
 use Spatie\DbDumper\Compressors\GzipCompressor;
 
 class BackupCommandTest extends TestCase
@@ -138,6 +138,7 @@ class BackupCommandTest extends TestCase
         $this
             ->artisan('backup:run --only-db --db-name=db1')
             ->assertExitCode(0);
+
         Storage::disk('local')->assertExists($this->expectedZipPath);
 
         $this
@@ -154,7 +155,6 @@ class BackupCommandTest extends TestCase
 
         $this
             ->artisan('backup:run --only-db --db-name=wrongName')
-
             ->assertExitCode(1);
     }
 
@@ -211,7 +211,7 @@ class BackupCommandTest extends TestCase
     /** @test */
     public function it_will_fail_when_trying_to_backup_to_an_non_existing_diskname()
     {
-        $resultCode = Artisan::call('backup:run --only-to-disk=non-exisiting-disk');
+        $resultCode = Artisan::call('backup:run --only-to-disk=non-existing-disk');
 
         $this->assertEquals(1, $resultCode);
 

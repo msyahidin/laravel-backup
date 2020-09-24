@@ -4,6 +4,8 @@ namespace Develoopin\Backup\BackupDestination;
 
 use Carbon\Carbon;
 use Illuminate\Contracts\Filesystem\Filesystem;
+use InvalidArgumentException;
+use Spatie\Backup\Tasks\Backup\BackupJob;
 
 class Backup
 {
@@ -25,8 +27,13 @@ class Backup
     public function __construct(Filesystem $disk, string $path)
     {
         $this->disk = $disk;
-
         $this->path = $path;
+        $this->exists = true;
+    }
+
+    public function disk(): Filesystem
+    {
+        return $this->disk;
     }
 
     public function path(): string
@@ -46,7 +53,14 @@ class Backup
     public function date(): Carbon
     {
         if ($this->date === null) {
-            $this->date = Carbon::createFromTimestamp($this->disk->lastModified($this->path));
+            try {
+                // try to parse the date from the filename
+                $basename = basename($this->path);
+                $this->date = Carbon::createFromFormat(BackupJob::FILENAME_FORMAT, $basename);
+            } catch (InvalidArgumentException $e) {
+                // if that fails, ask the (remote) filesystem
+                $this->date = Carbon::createFromTimestamp($this->disk->lastModified($this->path));
+            }
         }
 
         return $this->date;
@@ -55,7 +69,7 @@ class Backup
     /**
      * Get the size in bytes.
      */
-    public function size(): int
+    public function size(): float
     {
         if ($this->size === null) {
             if (! $this->exists()) {
@@ -75,9 +89,8 @@ class Backup
 
     public function delete()
     {
-        $this->exists = null;
-
         $this->disk->delete($this->path);
+        $this->exists = false;
 
         consoleOutput()->info("Deleted backup `{$this->path}`.");
     }

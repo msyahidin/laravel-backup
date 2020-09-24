@@ -2,8 +2,8 @@
 
 namespace Develoopin\Backup\BackupDestination;
 
-use Exception;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Contracts\Filesystem\Factory;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Develoopin\Backup\Exceptions\InvalidBackupDestination;
@@ -139,7 +139,7 @@ class BackupDestination
         }
     }
 
-    public function usedStorage(): int
+    public function usedStorage(): float
     {
         return $this->backups()->size();
     }

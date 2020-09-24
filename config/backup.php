@@ -35,6 +35,11 @@ return [
                  * Determines if symlinks should be followed.
                  */
                 'follow_links' => false,
+
+                /*
+                 * Determines if it should avoid unreadable folders.
+                 */
+                'ignore_unreadable_directories' => false,
             ],
 
             /*
@@ -134,6 +139,11 @@ return [
 
         'mail' => [
             'to' => 'your@example.com',
+
+            'from' => [
+                'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+                'name' => env('MAIL_FROM_NAME', 'Example'),
+            ],
         ],
 
         'slack' => [
@@ -258,4 +268,5 @@ return [
             'delete_oldest_backups_when_using_more_megabytes_than' => 5000,
         ],
     ],
+
 ];

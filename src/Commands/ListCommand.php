@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 use Develoopin\Backup\BackupDestination\Backup;
 use Develoopin\Backup\Tasks\Monitor\BackupDestinationStatus;
 use Develoopin\Backup\Tasks\Monitor\BackupDestinationStatusFactory;
+use Develoopin\Backup\Helpers\RightAlignedTableStyle;
 
 class ListCommand extends BaseCommand
 {
@@ -31,7 +32,10 @@ class ListCommand extends BaseCommand
             return $this->convertToRow($backupDestinationStatus);
         });
 
-        $this->table($headers, $rows);
+        $this->table($headers, $rows, 'default', [
+            4 => new RightAlignedTableStyle(),
+            6 => new RightAlignedTableStyle(),
+        ]);
 
         return $this;
     }

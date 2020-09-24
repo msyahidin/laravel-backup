@@ -2,9 +2,9 @@
 
 namespace Develoopin\Backup\Tasks\Backup;
 
-use ZipArchive;
 use Illuminate\Support\Str;
 use Develoopin\Backup\Helpers\Format;
+use ZipArchive;
 
 class Zip
 {
@@ -59,7 +59,7 @@ class Zip
         return $this->pathToZip;
     }
 
-    public function size(): int
+    public function size(): float
     {
         if ($this->fileCount === 0) {
             return 0;
@@ -100,7 +100,11 @@ class Zip
         }
 
         foreach ($files as $file) {
-            if (file_exists($file)) {
+            if (is_dir($file)) {
+                $this->zipFile->addEmptyDir($file);
+            }
+
+            if (is_file($file)) {
                 $this->zipFile->addFile($file, ltrim($nameInZip, DIRECTORY_SEPARATOR)).PHP_EOL;
             }
             $this->fileCount++;

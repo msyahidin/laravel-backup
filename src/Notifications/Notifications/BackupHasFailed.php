@@ -4,19 +4,25 @@ namespace Develoopin\Backup\Notifications\Notifications;
 
 use Develoopin\Backup\Notifications\BaseNotification;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Messages\SlackAttachment;
 use Develoopin\Backup\Events\BackupHasFailed as BackupHasFailedEvent;
+use Illuminate\Notifications\Messages\SlackMessage;
 
 class BackupHasFailed extends BaseNotification
 {
     /** @var \Develoopin\Backup\Events\BackupHasFailed */
     protected $event;
 
+    public function __construct(BackupHasFailedEvent $event)
+    {
+        $this->event = $event;
+    }
+
     public function toMail(): MailMessage
     {
         $mailMessage = (new MailMessage)
             ->error()
+            ->from(config('backup.notifications.mail.from.address', config('mail.from.address')), config('backup.notifications.mail.from.name', config('mail.from.name')))
             ->subject(trans('backup::notifications.backup_failed_subject', ['application_name' => $this->applicationName()]))
             ->line(trans('backup::notifications.backup_failed_body', ['application_name' => $this->applicationName()]))
             ->line(trans('backup::notifications.exception_message', ['message' => $this->event->exception->getMessage()]))
@@ -49,12 +55,5 @@ class BackupHasFailed extends BaseNotification
             ->attachment(function (SlackAttachment $attachment) {
                 $attachment->fields($this->backupDestinationProperties()->toArray());
             });
-    }
-
-    public function setEvent(BackupHasFailedEvent $event)
-    {
-        $this->event = $event;
-
-        return $this;
     }
 }

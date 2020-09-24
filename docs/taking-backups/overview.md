@@ -46,7 +46,7 @@ This section of the configuration determines which files and databases will be b
       * The name of this application. You can use this name to monitor
       * the backups.
       */
-     'name' => env('APP_URL'),
+     'name' => env('APP_NAME', 'laravel-backup'),
 
      'source' => [
 
@@ -114,7 +114,7 @@ The zipped backup can be copied to one or more filesystems. This section of the 
     ],
 ```
 
-The default value of `config('laravel-backup.destination.disks')` is an array with only one key: `local`. Beware! If you only use the local disk to take backups and that disk crashes you will have nothing left but tears. Having a backup is not the same as having a backup strategy!
+The default value of `config('backup.destination.disks')` is an array with only one key: `local`. Beware! If you only use the local disk to take backups and that disk crashes you will have nothing left but tears. Having a backup is not the same as having a backup strategy!
 
 We highly recommend that you configure some extra disks in `app/config/filesystems.php` and add them as destination filesystems for the backup. Those disks should use external servers or services (such as S3 or Dropbox).
 

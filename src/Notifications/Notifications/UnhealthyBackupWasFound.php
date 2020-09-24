@@ -14,10 +14,16 @@ class UnhealthyBackupWasFound extends BaseNotification
     /** @var \Develoopin\Backup\Events\UnhealthyBackupWasFound */
     protected $event;
 
+    public function __construct(UnhealthyBackupWasFoundEvent $event)
+    {
+        $this->event = $event;
+    }
+
     public function toMail(): MailMessage
     {
         $mailMessage = (new MailMessage)
             ->error()
+            ->from(config('backup.notifications.mail.from.address', config('mail.from.address')), config('backup.notifications.mail.from.name', config('mail.from.name')))
             ->subject(trans('backup::notifications.unhealthy_backup_found_subject', ['application_name' => $this->applicationName()]))
             ->line(trans('backup::notifications.unhealthy_backup_found_body', ['application_name' => $this->applicationName(), 'disk_name' => $this->diskName()]))
             ->line($this->problemDescription());
@@ -81,12 +87,5 @@ class UnhealthyBackupWasFound extends BaseNotification
     protected function failure(): HealthCheckFailure
     {
         return $this->event->backupDestinationStatus->getHealthCheckFailure();
-    }
-
-    public function setEvent(UnhealthyBackupWasFoundEvent $event)
-    {
-        $this->event = $event;
-
-        return $this;
     }
 }

@@ -3,13 +3,23 @@
 namespace Spatie\Backup\Tests\BackupDestination;
 
 use Carbon\Carbon;
-use Spatie\Backup\Tests\TestCase;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Backup\BackupDestination\Backup;
 use Spatie\Backup\BackupDestination\BackupDestinationFactory;
+use Spatie\Backup\Tests\TestCase;
 
 class BackupTest extends TestCase
 {
+    /** @test */
+    public function it_can_determine_the_disk_of_the_backup()
+    {
+        $fileName = 'test.zip';
+
+        $backup = $this->getBackupForFile($fileName);
+
+        $this->assertSame(Storage::disk('local'), $backup->disk());
+    }
+
     /** @test */
     public function it_can_determine_the_path_of_the_backup()
     {
@@ -43,7 +53,7 @@ class BackupTest extends TestCase
     {
         $backup = $this->getBackupForFile('test.zip', 0, 'this backup has content');
 
-        $fileSize = Storage::disk('local')->size('mysite.com/test.zip');
+        $fileSize = floatval(Storage::disk('local')->size('mysite.com/test.zip'));
 
         $this->assertSame($fileSize, $backup->size());
 
@@ -57,7 +67,7 @@ class BackupTest extends TestCase
 
         $backup->delete();
 
-        $this->assertSame(0, $backup->size());
+        $this->assertSame(0.0, $backup->size());
     }
 
     /** @test */
@@ -95,6 +105,14 @@ class BackupTest extends TestCase
         $backupDestination = BackupDestinationFactory::createFromArray(config('backup.backup'))->first();
 
         $this->assertSame([], $backupDestination->getDiskOptions());
+    }
+
+    /** @test */
+    public function it_need_a_float_type_size()
+    {
+        $backup = $this->getBackupForFile('test.zip', 0, 'this backup has content');
+
+        $this->assertIsFloat($backup->size());
     }
 
     protected function getBackupForFile(string $name, int $ageInDays = 0): Backup

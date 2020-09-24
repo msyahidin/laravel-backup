@@ -2,9 +2,8 @@
 
 namespace Develoopin\Backup\Tasks\Backup;
 
-use Exception;
 use Carbon\Carbon;
-use Spatie\DbDumper\DbDumper;
+use Exception;
 use Illuminate\Support\Collection;
 use Spatie\DbDumper\Databases\Sqlite;
 use Spatie\DbDumper\Databases\MongoDb;
@@ -13,13 +12,16 @@ use Develoopin\Backup\Events\BackupWasSuccessful;
 use Develoopin\Backup\Events\BackupZipWasCreated;
 use Develoopin\Backup\Exceptions\InvalidBackupJob;
 use Spatie\DbDumper\Compressors\GzipCompressor;
+use Spatie\DbDumper\DbDumper;
 use Spatie\TemporaryDirectory\TemporaryDirectory;
 use Develoopin\Backup\Events\BackupManifestWasCreated;
 use Develoopin\Backup\BackupDestination\BackupDestination;
 
 class BackupJob
 {
-    /** @var \Develoopin\Backup\Tasks\Backup\FileSelection */
+    public const FILENAME_FORMAT = 'Y-m-d-H-i-s.\z\i\p';
+
+    /** @var FileSelection */
     protected $fileSelection;
 
     /** @var \Illuminate\Support\Collection */
@@ -58,7 +60,8 @@ class BackupJob
         $this->dbDumpers = $this->dbDumpers->filter(
             function (DbDumper $dbDumper, string $connectionName) use ($allowedDbNames) {
                 return in_array($connectionName, $allowedDbNames);
-            });
+            }
+        );
 
         return $this;
     }
@@ -79,7 +82,7 @@ class BackupJob
 
     public function setDefaultFilename(): self
     {
-        $this->filename = Carbon::now()->format('Y-m-d-H-i-s').'.zip';
+        $this->filename = Carbon::now()->format(static::FILENAME_FORMAT);
 
         return $this;
     }
@@ -202,13 +205,13 @@ class BackupJob
 
     protected function createZipContainingEveryFileInManifest(Manifest $manifest)
     {
-        consoleOutput()->info("Zipping {$manifest->count()} files...");
+        consoleOutput()->info("Zipping {$manifest->count()} files and directories...");
 
         $pathToZip = $this->temporaryDirectory->path(config('backup.backup.destination.filename_prefix').$this->filename);
 
         $zip = Zip::createForManifest($manifest, $pathToZip);
 
-        consoleOutput()->info("Created zip containing {$zip->count()} files. Size is {$zip->humanReadableSize()}");
+        consoleOutput()->info("Created zip containing {$zip->count()} files and directories. Size is {$zip->humanReadableSize()}");
 
         $this->sendNotification(new BackupZipWasCreated($pathToZip));
 
@@ -275,7 +278,11 @@ class BackupJob
     protected function sendNotification($notification)
     {
         if ($this->sendNotifications) {
-            event($notification);
+            rescue(function () use ($notification) {
+                event($notification);
+            }, function () {
+                consoleOutput()->error('Sending notification failed');
+            });
         }
     }
 
