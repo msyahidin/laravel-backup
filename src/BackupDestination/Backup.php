@@ -5,7 +5,7 @@ namespace Develoopin\Backup\BackupDestination;
 use Carbon\Carbon;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use InvalidArgumentException;
-use Spatie\Backup\Tasks\Backup\BackupJob;
+use Develoopin\Backup\Tasks\Backup\BackupJob;
 
 class Backup
 {
