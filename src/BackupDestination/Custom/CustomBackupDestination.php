@@ -2,12 +2,11 @@
 
 namespace Develoopin\Backup\BackupDestination\Custom;
 
+use Develoopin\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\Exceptions\InvalidBackupDestination;
 use Exception;
-use Carbon\Carbon;
 use Illuminate\Contracts\Filesystem\Factory;
 use Illuminate\Contracts\Filesystem\Filesystem;
-use Develoopin\Backup\Exceptions\InvalidBackupDestination;
-use Develoopin\Backup\BackupDestination\BackupDestination;
 
 class CustomBackupDestination extends BackupDestination
 {
@@ -72,6 +71,7 @@ class CustomBackupDestination extends BackupDestination
             $path .= $this->info['company_id'] . '/';
         }
         $path .= pathinfo($file, PATHINFO_BASENAME);
+
         return $path;
     }
 }

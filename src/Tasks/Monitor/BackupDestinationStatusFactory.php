@@ -2,9 +2,9 @@
 
 namespace Develoopin\Backup\Tasks\Monitor;
 
+use Develoopin\Backup\BackupDestination\BackupDestination;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Develoopin\Backup\BackupDestination\BackupDestination;
 
 class BackupDestinationStatusFactory
 {

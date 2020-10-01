@@ -2,14 +2,14 @@
 
 namespace Develoopin\Backup;
 
-use Illuminate\Support\ServiceProvider;
-use Develoopin\Backup\Commands\ListCommand;
-use Develoopin\Backup\Helpers\ConsoleOutput;
 use Develoopin\Backup\Commands\BackupCommand;
 use Develoopin\Backup\Commands\CleanupCommand;
+use Develoopin\Backup\Commands\ListCommand;
 use Develoopin\Backup\Commands\MonitorCommand;
+use Develoopin\Backup\Helpers\ConsoleOutput;
 use Develoopin\Backup\Notifications\EventHandler;
 use Develoopin\Backup\Tasks\Cleanup\CleanupStrategy;
+use Illuminate\Support\ServiceProvider;
 
 class BackupServiceProvider extends ServiceProvider
 {

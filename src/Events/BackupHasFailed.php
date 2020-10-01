@@ -2,8 +2,8 @@
 
 namespace Develoopin\Backup\Events;
 
-use Exception;
 use Develoopin\Backup\BackupDestination\BackupDestination;
+use Exception;
 
 class BackupHasFailed
 {

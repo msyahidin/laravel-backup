@@ -3,10 +3,10 @@
 namespace Develoopin\Backup\BackupDestination;
 
 use Carbon\Carbon;
+use Develoopin\Backup\Exceptions\InvalidBackupDestination;
 use Exception;
 use Illuminate\Contracts\Filesystem\Factory;
 use Illuminate\Contracts\Filesystem\Filesystem;
-use Develoopin\Backup\Exceptions\InvalidBackupDestination;
 
 class BackupDestination
 {

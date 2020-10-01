@@ -3,11 +3,11 @@
 namespace Develoopin\Backup\Tasks\Cleanup\Strategies;
 
 use Carbon\Carbon;
-use Illuminate\Support\Collection;
-use Develoopin\Backup\Tasks\Cleanup\Period;
 use Develoopin\Backup\BackupDestination\Backup;
-use Develoopin\Backup\Tasks\Cleanup\CleanupStrategy;
 use Develoopin\Backup\BackupDestination\BackupCollection;
+use Develoopin\Backup\Tasks\Cleanup\CleanupStrategy;
+use Develoopin\Backup\Tasks\Cleanup\Period;
+use Illuminate\Support\Collection;
 
 class DefaultStrategy extends CleanupStrategy
 {

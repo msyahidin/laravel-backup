@@ -2,9 +2,9 @@
 
 namespace Develoopin\Backup\Tasks\Monitor;
 
-use Illuminate\Support\Str;
-use Develoopin\Backup\Exceptions\InvalidHealthCheck;
 use Develoopin\Backup\BackupDestination\BackupDestination;
+use Develoopin\Backup\Exceptions\InvalidHealthCheck;
+use Illuminate\Support\Str;
 
 abstract class HealthCheck
 {

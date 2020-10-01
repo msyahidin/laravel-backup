@@ -2,10 +2,10 @@
 
 namespace Develoopin\Backup\Commands;
 
-use Exception;
 use Develoopin\Backup\Events\BackupHasFailed;
 use Develoopin\Backup\Exceptions\InvalidCommand;
 use Develoopin\Backup\Tasks\Backup\BackupJobFactory;
+use Exception;
 
 class BackupCommand extends BaseCommand
 {

@@ -2,9 +2,9 @@
 
 namespace Develoopin\Backup\Tasks\Monitor\HealthChecks;
 
+use Develoopin\Backup\BackupDestination\BackupDestination;
 use Develoopin\Backup\Helpers\Format;
 use Develoopin\Backup\Tasks\Monitor\HealthCheck;
-use Develoopin\Backup\BackupDestination\BackupDestination;
 
 class MaximumStorageInMegabytes extends HealthCheck
 {

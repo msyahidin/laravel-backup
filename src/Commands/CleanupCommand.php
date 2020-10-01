@@ -2,11 +2,11 @@
 
 namespace Develoopin\Backup\Commands;
 
-use Exception;
+use Develoopin\Backup\BackupDestination\BackupDestinationFactory;
 use Develoopin\Backup\Events\CleanupHasFailed;
 use Develoopin\Backup\Tasks\Cleanup\CleanupJob;
 use Develoopin\Backup\Tasks\Cleanup\CleanupStrategy;
-use Develoopin\Backup\BackupDestination\BackupDestinationFactory;
+use Exception;
 
 class CleanupCommand extends BaseCommand
 {

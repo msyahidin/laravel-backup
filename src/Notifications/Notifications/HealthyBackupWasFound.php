@@ -2,10 +2,10 @@
 
 namespace Develoopin\Backup\Notifications\Notifications;
 
+use Develoopin\Backup\Events\HealthyBackupWasFound as HealthyBackupWasFoundEvent;
 use Develoopin\Backup\Notifications\BaseNotification;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\SlackAttachment;
-use Develoopin\Backup\Events\HealthyBackupWasFound as HealthyBackupWasFoundEvent;
 use Illuminate\Notifications\Messages\SlackMessage;
 
 class HealthyBackupWasFound extends BaseNotification

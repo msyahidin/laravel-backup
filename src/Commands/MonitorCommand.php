@@ -4,7 +4,6 @@ namespace Develoopin\Backup\Commands;
 
 use Develoopin\Backup\Events\HealthyBackupWasFound;
 use Develoopin\Backup\Events\UnhealthyBackupWasFound;
-use Develoopin\Backup\Tasks\Monitor\BackupDestinationStatus;
 use Develoopin\Backup\Tasks\Monitor\BackupDestinationStatusFactory;
 
 class MonitorCommand extends BaseCommand

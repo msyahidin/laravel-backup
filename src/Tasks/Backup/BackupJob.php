@@ -3,19 +3,19 @@
 namespace Develoopin\Backup\Tasks\Backup;
 
 use Carbon\Carbon;
-use Exception;
-use Illuminate\Support\Collection;
-use Spatie\DbDumper\Databases\Sqlite;
-use Spatie\DbDumper\Databases\MongoDb;
+use Develoopin\Backup\BackupDestination\BackupDestination;
 use Develoopin\Backup\Events\BackupHasFailed;
+use Develoopin\Backup\Events\BackupManifestWasCreated;
 use Develoopin\Backup\Events\BackupWasSuccessful;
 use Develoopin\Backup\Events\BackupZipWasCreated;
 use Develoopin\Backup\Exceptions\InvalidBackupJob;
+use Exception;
+use Illuminate\Support\Collection;
 use Spatie\DbDumper\Compressors\GzipCompressor;
+use Spatie\DbDumper\Databases\MongoDb;
+use Spatie\DbDumper\Databases\Sqlite;
 use Spatie\DbDumper\DbDumper;
 use Spatie\TemporaryDirectory\TemporaryDirectory;
-use Develoopin\Backup\Events\BackupManifestWasCreated;
-use Develoopin\Backup\BackupDestination\BackupDestination;
 
 class BackupJob
 {
